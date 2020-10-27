@@ -36,12 +36,13 @@ function setIconBig(data) {
 
 function getDaily(data) {
     const daily = data.daily;
-    daily.forEach(element => {
-        const UNIX_timestamp = element.dt;
+
+    for (let i = 1; i < daily.length; i++) {
+        const UNIX_timestamp = daily[i].dt;
         const newDate = new Date(UNIX_timestamp * 1000);
         const day = newDate.getDay();
-        const temp = element.temp.day;
-        const iconId = element.weather[0].icon;
+        const temp = daily[i].temp.day;
+        const iconId = daily[i].weather[0].icon;
         const iconUrl = `http://openweathermap.org/img/wn/${iconId}@2x.png`;
         const weatherItem = document.createElement('div');
 
@@ -50,7 +51,23 @@ function getDaily(data) {
         <img src="${iconUrl}" alt="icon">
         <div class="degrees">${temp.toFixed(0)} &deg; C</div>`;
         weekInfo.appendChild(weatherItem);
-    });
+    }
+
+    // daily.forEach(element => {
+    //     const UNIX_timestamp = element.dt;
+    //     const newDate = new Date(UNIX_timestamp * 1000);
+    //     const day = newDate.getDay();
+    //     const temp = element.temp.day;
+    //     const iconId = element.weather[0].icon;
+    //     const iconUrl = `http://openweathermap.org/img/wn/${iconId}@2x.png`;
+    //     const weatherItem = document.createElement('div');
+
+    //     weatherItem.classList.add('weekInfo__item');
+    //     weatherItem.innerHTML = `<div class="day">${weekDays[day]}</div>
+    //     <img src="${iconUrl}" alt="icon">
+    //     <div class="degrees">${temp.toFixed(0)} &deg; C</div>`;
+    //     weekInfo.appendChild(weatherItem);
+    // });
 }
 
 
