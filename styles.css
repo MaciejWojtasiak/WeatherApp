@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #6a93cb;
+    background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+}
+
+.app {
+    display: flex;
+    width: 80%;
+    min-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #9E9999;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.weather {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 3;
+    background-color: #537895;
+    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+}
+
+.weather__dateAndCity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.weather__dateAndCity {
+    font-size: 2.6rem;
+}
+
+.date {
+    text-transform: uppercase;
+}
+
+.city {
+    text-align: right;
+}
+
+.weather__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather__info img {
+    width: 180px;
+}
+
+.weather__info .temp {
+    font-size: 6rem;
+    font-weight: normal;
+    color: #EC9E37;
+}
+
+.weather__weekInfo {
+    display: inline-grid;
+    grid-template-columns: repeat(8, 1fr);
+    text-align: center;
+}
+
+.weekInfo__item img {
+    width: 50px;
+}
+
+.image {
+    width: 100%;
+    flex: 2;
+    background-image: url('./images/beach.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+@media (max-width: 575.98px) {
+    .weather {
+        padding: 20px;
+    }
+
+    .weather__dateAndCity {
+        font-size: 1.5rem;
+    }
+
+    .weather__info {
+        align-items: center;
+    }
+
+    .weather__info .temp {
+        font-size: 2.8rem;
+    }
+
+    .weather__weekInfo {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        text-align: center;
+    }
+
+    .weekInfo__item {
+        margin: 2px;
+    }
+
+
+}
+
+
+@media (max-width: 767.98px) {
+    .weather {
+        flex: 1;
+    }
+
+    .image {
+        flex: 0;
+    }
+}
