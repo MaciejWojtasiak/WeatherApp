@@ -7,7 +7,8 @@ For privacy reasons, the user is asked for permission to report location informa
 - HTML
 - CSS
 - JavaScript
-
+- GeolocationApi
+- Open Weather API
 # Deployment
 https://maciejwojtasiak.github.io/WeatherApp/
 
