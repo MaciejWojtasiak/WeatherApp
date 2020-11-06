@@ -31,7 +31,7 @@ function setTemp(data) {
 }
 function setIconBig(data) {
     const iconId = data.current.weather[0].icon;
-    return `http://openweathermap.org/img/wn/${iconId}@2x.png`;
+    return `https://openweathermap.org/img/wn/${iconId}@2x.png`;
 }
 
 function getDaily(data) {
